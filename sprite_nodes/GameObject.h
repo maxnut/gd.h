@@ -233,10 +233,12 @@ namespace gd {
 		cocos2d::CCRect getObjectRect(float a, float b)
 		{
 			cocos2d::CCRect r = getObjectRect();
-			r.origin.x += a * r.size.width * 1.5f;
-			r.origin.y += b * r.size.height * 1.5f;
+			r.origin.x += r.size.width / 2;
+			r.origin.y += r.size.height / 2;
 			r.size.width *= a;
 			r.size.height *= b;
+			r.origin.x -= r.size.width / 2;
+			r.origin.y -= r.size.height / 2;
 			return r;
 		}
 
