@@ -102,7 +102,7 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/KeybindingsLayer.h"
 #include "layers_scenes_transitions_nodes/DrawGridLayer.h"
 #include "layers_scenes_transitions_nodes/CreatorLayer.h"
-#include "layers_scenes_transitions_nodes/LevelSearchLayer.h"
+
 #include "layers_scenes_transitions_nodes/LevelSelectLayer.h"
 #include "layers_scenes_transitions_nodes/OptionsLayer.h"
 #include "layers_scenes_transitions_nodes/DailyLevelPage.h"
@@ -120,6 +120,8 @@ enum FMOD_RESULT;
 #include "level_nodes/SongInfoObject.h"
 #include "level_nodes/ColorAction.h"
 #include "level_nodes/GJMapPack.h"
+
+#include "layers_scenes_transitions_nodes/LevelSearchLayer.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"

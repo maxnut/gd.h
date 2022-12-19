@@ -21,7 +21,7 @@ namespace gd {
                 );
             }
 
-            static void scene(gd::GJSearchObject* pSearch) {
+            static cocos2d::CCScene* scene(gd::GJSearchObject* pSearch) {
                 auto pScene = cocos2d::CCScene::create();
 
                 pScene->addChild(gd::LevelBrowserLayer::create(pSearch));
@@ -29,6 +29,7 @@ namespace gd {
                 cocos2d::CCDirector::sharedDirector()->replaceScene(
                     cocos2d::CCTransitionFade::create(.5f, pScene)
                 );
+                return pScene;
             }
     };
 }
