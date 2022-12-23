@@ -38,5 +38,45 @@ namespace gd {
 				base + 0xf1e50
 				)();
 		}
+
+		void unCompleteLevel(GJGameLevel* lvl) {
+			reinterpret_cast<void(__thiscall*)(
+				GameStatsManager*, GJGameLevel*
+				)>(
+					base + 0xF6A00
+					)(
+						this, lvl
+						);
+		}
+
+		void* function_4A(GJGameLevel* lvl) {
+			return reinterpret_cast<void*(__thiscall*)(
+				GameStatsManager*, GJGameLevel*
+				)>(
+					base + 0xF8700
+					)(
+						this, lvl
+						);
+		}
+
+		const char* getLevelKey(GJGameLevel* lvl) {
+			return reinterpret_cast<const char*(__thiscall*)(
+				GameStatsManager*, GJGameLevel*
+				)>(
+					base + 0xF3BD0
+					)(
+						this, lvl
+						);
+		}
+
+		const char* getRewardKey(GJGameLevel* lvl) {
+			return reinterpret_cast<const char* (__thiscall*)(
+				GameStatsManager*, GJGameLevel*
+				)>(
+					base + 0xF5FD0
+					)(
+						this, lvl
+						);
+		}
 	};
 }
