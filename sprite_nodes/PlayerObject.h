@@ -75,9 +75,6 @@ namespace gd {
       cocos2d::CCParticleSystemQuad* m_unk5D4;
       cocos2d::CCParticleSystemQuad* m_unk5D8;
       PAD(0x20)
-      // int m_streakID;
-      // float m_wellIdk;
-      // PAD = mac 0x0, win 0x10, android 0x0;
       bool m_unk5FC;
       bool m_unk5FD;
       bool m_unk5FE;
