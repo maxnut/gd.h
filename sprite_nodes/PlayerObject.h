@@ -77,7 +77,7 @@ namespace gd {
       PAD(0x20)
       bool m_unk5FC;
       bool m_unk5FD;
-      bool m_unk5FE;
+      bool m_isDropping;
       PAD(0x11)
       bool m_unk610;
       bool m_isHolding;
@@ -99,6 +99,7 @@ namespace gd {
       bool m_isRobot;
       bool m_isSpider;
       bool m_isUpsideDown;
+      PAD(1);
       bool m_isOnGround;
       bool m_isDashing;
       float m_vehicleSize;
@@ -108,7 +109,7 @@ namespace gd {
       cocos2d::CCLayer* m_unk65C;
       bool m_isSliding;
       bool m_isRising;
-      bool m_unk662;
+      bool m_isLocked;
       cocos2d::CCPoint m_lastGroundedPos;
       cocos2d::CCArray* m_touchingRings;
       GameObject* m_lastActivatedPortal;
