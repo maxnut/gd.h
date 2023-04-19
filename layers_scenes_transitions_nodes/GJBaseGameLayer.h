@@ -4,7 +4,8 @@
 #include <gd.h>
 #include <vector>
 
-namespace gd {
+namespace gd
+{
 	class OBB2D;
 	class GJEffectManager;
 	class CCNodeContainer;
@@ -12,131 +13,131 @@ namespace gd {
 	class PlayerObject;
 	class GameObject;
 
-	class GDH_DLL GJBaseGameLayer : public cocos2d::CCLayer {
+	class GDH_DLL GJBaseGameLayer : public cocos2d::CCLayer
+	{
 	public:
 		PAD(4);
-		OBB2D* m_pBoundingBox; // 0x120 
-		GJEffectManager* m_pEffectManager; // 0x124 
-		cocos2d::CCLayer* m_pObjectLayer; // 0x128
-		// these names come from robtop himself, so if you think theyre bad go bother him
-		// more explained in depth here https://github.com/Wyliemaster/gddocs/blob/master/docs/resources/client/level-components/capacity-string.md
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTop4; // 0x12C 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddTop4; // 0x130 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTop3; // 0x134 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTop3; // 0x138 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddGlowTop3; // 0x13C 
-		CCNodeContainer* unk140;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextTop3; // 0x144 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextTop3; // 0x148 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeTop3; // 0x14C 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddTop3; // 0x150 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTop2; // 0x154 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTop2; // 0x158 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddGlowTop2; // 0x15C 
-		CCNodeContainer* unk160;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextTop2; // 0x164 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextTop2; // 0x168 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeTop2; // 0x16C 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddTop2; // 0x170 
-		cocos2d::CCSpriteBatchNode* m_pBatchNode; // 0x174 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAdd; // 0x178 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddGlow; // 0x17C 
-		CCNodeContainer* unk180;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextTop1; // 0x184 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextTop1; // 0x188 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeTop1; // 0x18C 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddTop1; // 0x190 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodePlayer; // 0x194 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddPlayer; // 0x198 
-		cocos2d::CCSpriteBatchNode* unk19C;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddMid; // 0x1A0 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeBottom; // 0x1A4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom; // 0x1A8 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottomGlow; // 0x1AC 
-		CCNodeContainer* unk1B0;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeText; // 0x1B4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddText; // 0x1B8 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNode; // 0x1BC 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAdd; // 0x1C0 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeBottom2; // 0x1C4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom2; // 0x1C8 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom2Glow; // 0x1CC 
-		CCNodeContainer* unk1D0;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextBot2; // 0x1D4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextBot2; // 0x1D8 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeBot2; // 0x1DC 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddBot2; // 0x1E0 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeBottom3; // 0x1E4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom3; // 0x1E8 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom3Glow; // 0x1EC 
-		CCNodeContainer* unk1F0;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextBot3; // 0x1F4 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextBot3; // 0x1F8 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeBot3; // 0x1FC 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddBot3; // 0x200 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeBottom4; // 0x204 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom4; // 0x208 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddBottom4Glow; // 0x20C 
-		CCNodeContainer* unk210;
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeTextBot4; // 0x214 
-		cocos2d::CCSpriteBatchNode* m_pBatchNodeAddTextBot4; // 0x218 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeBot4; // 0x21C 
-		cocos2d::CCSpriteBatchNode* m_pEffectBatchNodeAddBot4; // 0x220 
-		PlayerObject* m_pPlayer1; // 0x224 
-		PlayerObject* m_pPlayer2; // 0x228 
-		LevelSettingsObject* m_pLevelSettings; // 0x22C 
-		cocos2d::CCDictionary* unk230;
-		cocos2d::CCArray* m_pObjects; // 0x234 
-		cocos2d::CCArray* m_sectionObjects;	// 0x238
-		cocos2d::CCArray* unk23C;
-		cocos2d::CCArray* unk240;
-		cocos2d::CCArray* m_pSpawnObjects; // 0x244 
-		cocos2d::CCArray* unk248;
-		cocos2d::CCNode* unk24C;
-		std::vector<GameObject*> unk250;
-		std::vector<void*> unk25C; // idk the types for the rest of the vectors
-		cocos2d::CCDictionary* unk268;
-		cocos2d::CCDictionary* unk26C;
-		cocos2d::CCDictionary* unk270;
-		std::vector<void*> unk274;
-		std::vector<void*> unk280;
-		std::vector<void*> unk28C;
-		cocos2d::CCArray* unk298;
-		cocos2d::CCArray* unk29C;
-		cocos2d::CCDictionary* unk2A0;
-		cocos2d::CCDictionary* unk2A4;
-		bool m_bDidUpdateNormalCapacity; // 0x2A8 
-		bool m_bIsDualMode; // 0x2A9 
-		int unk2AC;
-		bool unk2B0;
-		int m_nAttemptClickCount; // 0x2B4 
-		int m_nCurrectSection; // 0x2B8 
-		int unk2BC; // probably what section gd has loaded up to
-		bool unk2C0;
-		bool unk2C1;
+		OBB2D *m_boundingBox;
+		GJEffectManager *m_effectManager;
+		cocos2d::CCLayer *m_pObjectLayer;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTop4;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddTop4;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTop3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTop3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddGlowTop3;
+		CCNodeContainer *m_batchNodeTop3Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextTop3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextTop3;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeTop3;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddTop3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTop2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTop2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddGlowTop2;
+		CCNodeContainer *m_batchNodeTop2Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextTop2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextTop2;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeTop2;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddTop2;
+		cocos2d::CCSpriteBatchNode *m_batchNode;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAdd;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddGlow;
+		CCNodeContainer *m_batchNodeTop1Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextTop1;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextTop1;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeTop1;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddTop1;
+		cocos2d::CCSpriteBatchNode *m_batchNodePlayer;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddPlayer;
+		cocos2d::CCSpriteBatchNode *m_batchNodePlayerGlow;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddMid;
+		cocos2d::CCSpriteBatchNode *m_batchNodeBottom;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottomGlow;
+		CCNodeContainer *m_batchNodeBot1Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeText;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddText;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNode;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAdd;
+		cocos2d::CCSpriteBatchNode *m_batchNodeBottom2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom2Glow;
+		CCNodeContainer *m_batchNodeBot2Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextBot2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextBot2;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeBot2;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddBot2;
+		cocos2d::CCSpriteBatchNode *m_batchNodeBottom3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom3Glow;
+		CCNodeContainer *m_batchNodeBot3Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextBot3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextBot3;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeBot3;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddBot3;
+		cocos2d::CCSpriteBatchNode *m_batchNodeBottom4;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom4;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddBottom4Glow;
+		CCNodeContainer *m_batchNodeBot4Container;
+		cocos2d::CCSpriteBatchNode *m_batchNodeTextBot4;
+		cocos2d::CCSpriteBatchNode *m_batchNodeAddTextBot4;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeBot4;
+		cocos2d::CCSpriteBatchNode *m_effectBatchNodeAddBot4;
+		PlayerObject *m_pPlayer1;
+		PlayerObject *m_pPlayer2;
+		LevelSettingsObject *m_pLevelSettings;
+		cocos2d::CCDictionary *m_disabledGroupsDict;
+		cocos2d::CCArray *m_pObjects;
+		cocos2d::CCArray *m_sectionObjects;
+		cocos2d::CCArray *m_sections;
+		cocos2d::CCArray *m_collisionBlocks;
+		cocos2d::CCArray *m_spawnObjects;
+		cocos2d::CCArray *m_spawnObjects2;
+		cocos2d::CCNode *m_groupNodes;
+		std::vector<GameObject *> m_objectsVec;
+		std::vector<GameObject *> m_disabledObjects;
+		cocos2d::CCDictionary *m_groupDict;
+		cocos2d::CCDictionary *m_staticGroupDict;
+		cocos2d::CCDictionary *m_optimizedGroupDict;
+		std::vector<cocos2d::CCArray *> m_groups;
+		std::vector<cocos2d::CCArray *> m_staticGroups;
+		std::vector<cocos2d::CCArray *> m_optimizedGroups;
+		cocos2d::CCArray *m_batchNodes;
+		cocos2d::CCArray *m_processedGroups;
+		cocos2d::CCDictionary *m_counterDict;
+		cocos2d::CCDictionary *m_spawnedGroups;
+		bool m_didUpdateNormalCapacity;
+		bool m_bIsDualMode;
+		int m_unk2AC;
+		bool m_activeDualTouch;
+		int m_attemptClickCount;
+		int m_lastVisibleSection;
+		int m_firstVisibleSection;
+		bool m_objectsAreDisabled;
+		bool m_blending;
 		PAD(0x8); // this should be 10 but im too lazy to fix playlayer rn
 
-		cocos2d::CCLayer* getObjectLayer() { return m_pObjectLayer; }
+		cocos2d::CCLayer *getObjectLayer() { return m_pObjectLayer; }
 
-		cocos2d::CCArray* getAllObjects() { return this->m_pObjects; }
-
-		void pushButton(int uk, bool btn2) {
-			reinterpret_cast<void(__thiscall*)(GJBaseGameLayer*, int, bool)>(
-				base + 0x111500
-			)(this, uk, btn2);
+		cocos2d::CCArray *getAllObjects() { return this->m_pObjects; }
+ 
+		void pushButton(int uk, bool btn2)
+		{
+			reinterpret_cast<void(__thiscall *)(GJBaseGameLayer *, int, bool)>(
+				base + 0x111500)(this, uk, btn2);
 		}
-		void releaseButton(int uk, bool btn2) {
-			reinterpret_cast<void(__thiscall*)(GJBaseGameLayer*, int, bool)>(
-				base + 0x111660
-			)(this, uk, btn2);
+		void releaseButton(int uk, bool btn2)
+		{
+			reinterpret_cast<void(__thiscall *)(GJBaseGameLayer *, int, bool)>(
+				base + 0x111660)(this, uk, btn2);
 		}
 
-		int sectionForPos(float x) 
+		int sectionForPos(float x)
 		{
 			int section = x / 100;
-			if (section < 0) section = 0;
+			if (section < 0)
+				section = 0;
 			return section;
-    	}
+		}
 	};
 }
 
