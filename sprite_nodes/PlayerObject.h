@@ -15,10 +15,11 @@ class GhostTrailEffect;
 
 class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 {
-	//1128
+	// 1128
   public:
 	PAD(0x14)
 	bool m_unk480;
+	cocos2d::CCNode* m_unk484;
 	cocos2d::CCDictionary* m_collisionLog;
 	cocos2d::CCDictionary* m_collisionLog1;
 	PAD(0x20)
@@ -85,7 +86,7 @@ class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 	bool m_isHolding;
 	bool m_hasJustHeld;
 	bool m_isHolding2;
-	bool m_hasJustHeld2;//
+	bool m_hasJustHeld2;
 	int m_unk618;
 	float m_unk61C;
 	int m_unk620;
@@ -177,6 +178,10 @@ class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 	void runBallRotation()
 	{
 		reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e9d10)(this);
+	}
+	void runBallRotation2()
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1E9E30)(this);
 	}
 	void activateStreak()
 	{

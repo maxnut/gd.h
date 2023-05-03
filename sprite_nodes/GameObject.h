@@ -242,6 +242,17 @@ namespace gd {
 			return r;
 		}
 
+		cocos2d::CCRect getObjectRect(cocos2d::CCRect r, float a, float b)
+		{
+			r.origin.x += r.size.width / 2;
+			r.origin.y += r.size.height / 2;
+			r.size.width *= a;
+			r.size.height *= b;
+			r.origin.x -= r.size.width / 2;
+			r.origin.y -= r.size.height / 2;
+			return r;
+		}
+
 		void updateOrientedBox() {
 
 			return reinterpret_cast<void(__thiscall*)(GameObject*)>(
