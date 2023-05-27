@@ -216,6 +216,11 @@ class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 		reinterpret_cast<void(__thiscall*)(PlayerObject*, bool)>(base + 0x1F6CB0)(this, active);
 	}
 
+	void setSecondColor(cocos2d::_ccColor3B const& color)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, cocos2d::_ccColor3B const&)>(base + 0x1f7870)(this, color);
+	}
+
 	void updateSpecial()
 	{
 		reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e8ab0)(this);
