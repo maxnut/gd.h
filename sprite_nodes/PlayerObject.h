@@ -62,7 +62,7 @@ class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 	PAD(0x24)
 	float m_decelerationRate;
 	PAD(0x14)
-	GameObject* m_unk59C;
+	GameObject* m_objectSnappedTo;
 	PAD(0x8)
 	GJRobotSprite* m_robotSprite;
 	GJSpiderSprite* m_spiderSprite;
