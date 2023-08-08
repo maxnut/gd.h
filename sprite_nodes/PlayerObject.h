@@ -226,6 +226,35 @@ class GDH_DLL PlayerObject : public GameObject, public AnimatedSpriteDelegate
 		reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1e8ab0)(this);
 	}
 
+	void updatePlayerFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f7e40)(this, frame);
+	}
+	void updatePlayerShipFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f7ff0)(this, frame);
+	}
+	void updatePlayerBallFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f83a0)(this, frame);
+	}
+	void updatePlayerUFOFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f81a0)(this, frame);
+	}
+	void updatePlayerWaveFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f8580)(this, frame);
+	}
+	void updatePlayerRobotFrame(int frame)
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*, int)>(base + 0x1f8550)(this, frame);
+	}
+	void updatePlayerScale()
+	{
+		reinterpret_cast<void(__thiscall*)(PlayerObject*)>(base + 0x1f9200)(this);
+	}
+
 	static PlayerObject* create(int cubeFrame, int shipFrame, cocos2d::CCLayer* layer)
 	{
 		auto ret = reinterpret_cast<PlayerObject*(__fastcall*)(int, int, cocos2d::CCLayer*)>(base + 0x1e6cf0)(
